@@ -11,7 +11,7 @@ services:
       - .:/work
     environment:
       - DEBUG=true   # Python获取到后是个string类型
-      - REDIS_HOST=0.0.0.0
+#      - REDIS_HOST=0.0.0.0
     command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
 #    command:
 #      - sleep

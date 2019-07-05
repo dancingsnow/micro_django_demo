@@ -7,7 +7,7 @@ import os
 import redis
 
 conn_pool = redis.ConnectionPool(
-    host=os.environ.get('REDIS_HOST', "0.0.0.0"),
+    host=os.environ.get('REDIS_HOST', "redis"),
     port=6379,
     db=0,
     password=os.environ.get('REDIS_PASS', None),
