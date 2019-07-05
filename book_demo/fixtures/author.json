@@ -1,0 +1,10 @@
+[
+  {
+    "model": "django_account.CompanyWorkZone",
+    "pk": 1,
+    "fields": {
+      "name": "国网中兴有限公司",
+      "work_zone": 3
+    }
+  }
+]

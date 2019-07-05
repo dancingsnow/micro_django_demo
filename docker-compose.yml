@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  django-demo:
+    build: .
+    ports:
+      - 4444:8000
+    volumes:
+      - .:/work
+    environment:
+      - REDIS_HOST=0.0.0.0
+      - DEBUG=true   # Python获取到后是个string类型
+    command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
+#    command:
+#      - sleep
+#      - "99999"
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true
