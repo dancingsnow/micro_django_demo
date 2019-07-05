@@ -14,8 +14,26 @@ services:
 #    command:
 #      - sleep
 #      - "99999"
-    networks:
-      - app_net
+
+  mysql:
+    image: mysql:8.0.16
+    ports:
+      - 3306:3306
+    restart: always
+
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: always
+
+  adminer:
+    image: adminer:4.6.2
+    ports:
+    - 8080:8080
+    restart: always
+
 
 networks:
   app_net:
