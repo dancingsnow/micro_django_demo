@@ -16,6 +16,9 @@ services:
 #    command:
 #      - sleep
 #      - "99999"
+    depends_on:
+      - mysql
+      - redis
 
   mysql:
     image: mysql:8.0.16
@@ -43,7 +46,7 @@ services:
   adminer:
     image: adminer:latest
     ports:
-    - 20004:8080
+      - 20004:8080
     restart: always
 
 
