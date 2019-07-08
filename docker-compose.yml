@@ -10,46 +10,19 @@ services:
     volumes:
       - .:/work
     environment:
+      - INIT_DB=true  # 首次执行时，需初始化数据库、表、表内初始数据，打开次设置。后续操作，无需设置次选项。
       - DEBUG=true   # Python获取到后是个string类型
-#      - REDIS_HOST=0.0.0.0
+#      - REDIS_HOST=0.0.0.0  # 默认redis
     command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
 #    command:
 #      - sleep
 #      - "99999"
+    networks:
+      - django_demo_net
     depends_on:
       - mysql
       - redis
 
-  mysql:
-    image: mysql:8.0.16
-    ports:
-      - 20002:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=micro_django
-    volumes:
-      - ./_data_mysql:/var/lib/mysql
-      - ./config_files/mysqlld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
-    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
-    restart: always
-
-  redis:
-    image: redis:latest
-    volumes:
-      - ./_data_redis:/data
-      - ./config_files/redis.conf:/usr/local/etc/redis/redis.conf
-    ports:
-      - 20003:6379
-    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
-    restart: always
-
-  adminer:
-    image: adminer:latest
-    ports:
-      - 20004:8080
-    restart: always
-
-
 networks:
-  app_net:
+  django_demo_net:
     external: true
