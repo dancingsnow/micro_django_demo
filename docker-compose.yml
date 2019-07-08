@@ -10,9 +10,14 @@ services:
     volumes:
       - .:/work
     environment:
-      - INIT_DB=true  # 首次执行时，需初始化数据库、表、表内初始数据，打开次设置。后续操作，无需设置次选项。
       - DEBUG=true   # Python获取到后是个string类型
+      - INIT_DB=true  # 首次执行时，需初始化数据库、表、表内初始数据，打开次设置。后续操作，无需设置次选项。
 #      - REDIS_HOST=0.0.0.0  # 默认redis
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_NAME=django_demo
+      - DB_USER=root
+      - DB_PWD=123456
     command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
 #    command:
 #      - sleep

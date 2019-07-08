@@ -81,9 +81,15 @@ WSGI_APPLICATION = 'micro_django_demo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'OPTIONS': {'charset': 'utf8mb4'}  # 针对mysql
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.environ['DB_NAME'],
+        "USER": os.environ["DB_USER"],
+        "PASSWORD": os.environ["DB_PWD"],
+        "HOST": os.environ["DB_HOST"],
+        "PORT": os.environ.get("DB_PORT", "3306"),
+        'OPTIONS': {'charset': 'utf8mb4'}
     }
 }
 
