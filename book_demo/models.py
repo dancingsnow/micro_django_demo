@@ -8,7 +8,7 @@ class Author(models.Model):
     name = models.CharField(max_length=32)
     age = models.IntegerField()
     # 与AuthorDetail建立一对一的关系
-    authorDetail = models.OneToOneField(to="AuthorDetail", on_delete=models.CASCADE)
+    author_detail = models.OneToOneField(to="AuthorDetail", on_delete=models.CASCADE)
 
     def __str__(self):
         return "(%s, %s)"%(self.nid, self.name)

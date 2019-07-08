@@ -1,10 +1,82 @@
 [
   {
-    "model": "django_account.CompanyWorkZone",
+    "model": "book_demo.AuthorDetail",
     "pk": 1,
     "fields": {
-      "name": "国网中兴有限公司",
-      "work_zone": 3
+      "nid": 1,
+      "birthday": "2019-01-01",
+      "telephone": "13300000001",
+      "addr": "长安街 1 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 2,
+    "fields": {
+      "nid": 2,
+      "birthday": "2019-01-02",
+      "telephone": "13300000002",
+      "addr": "长安街 2 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 3,
+    "fields": {
+      "nid": 3,
+      "birthday": "2019-01-03",
+      "telephone": "13300000003",
+      "addr": "长安街 3 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 4,
+    "fields": {
+      "nid": 4,
+      "birthday": "2019-01-04",
+      "telephone": "13300000004",
+      "addr": "长安街 4 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 5,
+    "fields": {
+      "nid": 5,
+      "birthday": "2019-01-05",
+      "telephone": "13300000005",
+      "addr": "长安街 5 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 6,
+    "fields": {
+      "nid": 6,
+      "birthday": "2019-01-06",
+      "telephone": "13300000006",
+      "addr": "长安街 6 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 7,
+    "fields": {
+      "nid": 7,
+      "birthday": "2019-01-07",
+      "telephone": "13300000007",
+      "addr": "长安街 7 号"
+    }
+  },
+    {
+    "model": "book_demo.AuthorDetail",
+    "pk": 8,
+    "fields": {
+      "nid": 8,
+      "birthday": "2019-01-08",
+      "telephone": "13300000008",
+      "addr": "长安街 8 号"
     }
   }
 ]

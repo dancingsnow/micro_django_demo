@@ -1,10 +1,62 @@
 [
   {
-    "model": "django_account.CompanyWorkZone",
+    "model": "book_demo.Author",
     "pk": 1,
     "fields": {
-      "name": "国网中兴有限公司",
-      "work_zone": 3
+      "nid": 1,
+      "name": "卡特",
+      "age": 16,
+      "author_detail_id": 1
+    }
+  },
+    {
+    "model": "book_demo.Author",
+    "pk": 2,
+    "fields": {
+      "nid": 2,
+      "name": "布隆",
+      "age": 17,
+      "author_detail_id": 2
+    }
+  },
+    {
+    "model": "book_demo.Author",
+    "pk": 3,
+    "fields": {
+      "nid": 3,
+      "name": "剑圣",
+      "age": 18,
+      "author_detail_id": 3
+    }
+  },
+    {
+    "model": "book_demo.Author",
+    "pk": 4,
+    "fields": {
+      "nid": 4,
+      "name": "德玛",
+      "age": 19,
+      "author_detail_id": 4
+    }
+  },
+    {
+    "model": "book_demo.Author",
+    "pk": 5,
+    "fields": {
+      "nid": 5,
+      "name": "皇子",
+      "age": 20,
+      "author_detail_id": 5
+    }
+  },
+    {
+    "model": "book_demo.Author",
+    "pk": 6,
+    "fields": {
+      "nid": 6,
+      "name": "盲僧",
+      "age": 21,
+      "author_detail_id": 6
     }
   }
 ]
