@@ -26,11 +26,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
-print("*"*40)
-print(os.environ.get("DEBUG"))
-print(type(os.environ.get("DEBUG")))
-# Application definition
+# print("DEBUG: %s, type('DEBUG'): %s"%(os.environ['DEBUG'], type(os.environ['DEBUG'])))  #  DEBUG: true, type('DEBUG'): <class 'str'>
 
+# Application definition
 INSTALLED_APPS = [
     'simpleui',
     'django.contrib.admin',
@@ -78,7 +76,7 @@ WSGI_APPLICATION = 'micro_django_demo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+# from django.db.backends.mysql.base   # mysqldb位置
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',

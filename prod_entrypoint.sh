@@ -2,7 +2,7 @@
 
 cd /work
 
-echo "starting ..."
+echo "starting script ..."
 
 # 收集django框架静态文件到STATIC_ROOT目录
 python manage.py collectstatic
@@ -22,5 +22,6 @@ if ["$INIT_DB" == "true"]; then
     echo "load done!"
 fi
 
+echo "finish script!"
 
 exec "$@"
