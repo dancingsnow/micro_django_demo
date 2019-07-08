@@ -4,7 +4,7 @@ cd /work
 
 echo "starting script ..."
 
-# 初始化数据库
+# 初始化
 if [ "$INIT_BUILD" == "true" ]; then
 
     # 收集django框架静态文件到STATIC_ROOT目录
