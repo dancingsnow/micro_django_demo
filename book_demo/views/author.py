@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 class AuthorCreateSerializer(serializers.Serializer):
     name = serializers.CharField(required=False, help_text="作者姓名")
     age = serializers.IntegerField(required=False, help_text="年龄")
-    authorDetail_id = serializers.IntegerField(required=False)
+    author_detail_id = serializers.IntegerField(required=False)
 
 
 class AuthorReqSerializer(AuthorCreateSerializer):
@@ -40,7 +40,7 @@ class DetailSerializer(serializers.Serializer):
 class AuthRespSerializer(serializers.Serializer):
     nid = serializers.IntegerField()
     name = serializers.CharField()
-    authorDetail_id = serializers.IntegerField()
+    author_detail_id = serializers.IntegerField()
     telephone = serializers.SerializerMethodField()
     author_detail = serializers.SerializerMethodField()
 
@@ -50,7 +50,7 @@ class AuthRespSerializer(serializers.Serializer):
         """以 get_  开头的方法，用于指定其后字段的获取
             get_telephone  为  telephone字段的实现方法
         """
-        return obj.authorDetail.telephone
+        return obj.author_detail.telephone
 
     # 额外扩展：方式二
     @swagger_serializer_method(serializer_or_field=DetailSerializer)

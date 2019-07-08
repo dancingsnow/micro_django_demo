@@ -11,8 +11,8 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=micro_django
-    volumes:
-      - ./../_data_mysql:/var/lib/mysql
+#    volumes:
+#      - ./../_data_mysql:/var/lib/mysql
 #      - ./../config_files/mysqlld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
     restart: always

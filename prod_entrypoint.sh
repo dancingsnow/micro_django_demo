@@ -4,11 +4,13 @@ cd /work
 
 echo "starting script ..."
 
-# 收集django框架静态文件到STATIC_ROOT目录
-python manage.py collectstatic
-
 # 初始化数据库
-if ["$INIT_DB" == "true"]; then
+if [ "$INIT_BUILD" == "true" ]; then
+
+    # 收集django框架静态文件到STATIC_ROOT目录
+    python manage.py collectstatic --clear
+#    python manage.py collectstatic --dry-run
+
     echo "Initialize DB table ... "
     # 生成表
     python manage.py makemigrations
