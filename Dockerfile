@@ -14,3 +14,5 @@ RUN cp prod_entrypoint.sh /usr/bin/ && chmod +x /usr/bin/prod_entrypoint.sh
 EXPOSE 8000
 
 ENTRYPOINT ["prod_entrypoint.sh"]
+
+CMD ["micro-django-start"]

@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))   # æ­¤é¡
 SECRET_KEY = 'fz=ux&^p4x0poo(_8x_v)jbs))a6f_^!8_-uw7o^upx=o22^63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True if str(os.environ.get("DEBUG")).lower() == "true" else False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -254,3 +254,5 @@ LOGGING = {
         'level': 'INFO',
     }
 }
+
+MICRO_VERSION = "0.0.1"

@@ -23,13 +23,13 @@ from drf_yasg import openapi
 from django.conf import settings
 from django.views.static import serve
 import re
-
+from micro_django_demo.settings import MICRO_VERSION
 
 # import drf_yasg.generators.OpenAPISchemaGenerator  # schema生成器位置
 schema_view = get_schema_view(
     openapi.Info(
         title="BookDemoAPI文档",  # 标题，总名字
-        default_version="v1",
+        default_version=MICRO_VERSION,
         description="这是一个demo文档的描述",
         terms_of_service="http://www.baidu.com",   # api服务条款，是个链接指向
         contact=openapi.Contact(name="snow", email="zrs@rowenatech.com"),

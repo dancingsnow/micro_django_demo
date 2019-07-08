@@ -18,7 +18,8 @@ services:
       - DB_NAME=micro_django
       - DB_USER=root
       - DB_PWD=123456
-    command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
+#    command: ['python','manage.py', 'runserver', '0.0.0.0:8000']
+    command: ['micro-django-start']
 #    command:
 #      - sleep
 #      - "99999"
