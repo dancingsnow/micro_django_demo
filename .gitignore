@@ -107,3 +107,4 @@ _db
 _data_mysql
 _data_redis
 /static/
+.idea
