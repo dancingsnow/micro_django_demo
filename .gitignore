@@ -106,5 +106,5 @@ venv.bak/
 _db
 _data_mysql
 _data_redis
-/static/
+./static/
 .idea
