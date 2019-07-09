@@ -6,7 +6,7 @@ services:
   micro-django-demo:
     build: .
     ports:
-      - 20001:8000
+      - 20011:8000
     volumes:
       - .:/work
     environment:

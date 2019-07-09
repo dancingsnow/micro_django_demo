@@ -5,9 +5,9 @@ version: '3'
 
 services:
   micro_mysql:
-    image: mysql:8.0.16
+    image: mysql:5.7.20
     ports:
-      - 20002:3306
+      - 20012:3306
     environment:
       - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_DATABASE=micro_django
@@ -25,7 +25,7 @@ services:
       - ./../_data_redis:/data
       - ./../config_files/redis.conf:/usr/local/etc/redis/redis.conf
     ports:
-      - 20003:6379
+      - 20013:6379
     command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
     restart: always
     networks:
@@ -34,7 +34,7 @@ services:
   adminer:
     image: adminer:latest
     ports:
-      - 20004:8080
+      - 20014:8080
     restart: always
     networks:
       - django_demo_net

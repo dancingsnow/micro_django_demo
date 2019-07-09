@@ -2,8 +2,16 @@
 
 cd /work
 
-echo "starting script ..."
+if [ "$DEBUG" == "true" ]; then
+    echo "use debug mode"
+    python setup.py develop
+else
+    echo "use product mode"
+	python setup.py install
 
+fi
+
+echo "starting script ..."
 # 初始化
 if [ "$INIT_BUILD" == "true" ]; then
 
