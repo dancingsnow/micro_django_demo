@@ -7,8 +7,7 @@ WORKDIR /work
 
 VOLUME /work/static
 
-#RUN pip install --upgrade pip
-RUN pip install -r requirements.txt -i https://pypi.douban.com/simple
+RUN pip install --upgrade pip && pip install -r requirements.txt -i https://pypi.douban.com/simple
 RUN cp prod_entrypoint.sh /usr/bin/ && chmod +x /usr/bin/prod_entrypoint.sh
 
 EXPOSE 8000
