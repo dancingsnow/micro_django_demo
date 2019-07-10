@@ -8,8 +8,7 @@
     - `cd dev/` 执行`dev/`下的`compose`文件
     - `docker-compose up`
 - 3.启动程序
-    - 首次启动，需初始化数据库。解注释`/docker-compose.yml`文件中`INIT_DB`变量
-    - 非首次启动，注释掉`INIT_BUILD`
+    - DEBUG打开会初始化数据库，及其数据等，其他不会进行此操作
     - 执行`docker-compose up`
 
 
