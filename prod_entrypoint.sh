@@ -6,7 +6,8 @@ cd /work
 echo "starting script ..."
 
 # 收集django框架静态文件到STATIC_ROOT目录
-python manage.py collectstatic --clear
+python rm -rf ./static/
+python manage.py collectstatic --noinput --clear
 #    python manage.py collectstatic --dry-run
 
 

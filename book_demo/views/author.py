@@ -76,12 +76,20 @@ class AuthRespSerializer(serializers.Serializer):
 
 class AuthorAllInfo(serializers.Serializer):
     """获取作者及其详情的所有信息，以及获取的总数量"""
-    author_list = serializers.SerializerMethodField()
     total_count = serializers.IntegerField()
+    # 方式一
+    # author_list = serializers.SerializerMethodField()
 
-    @swagger_serializer_method(serializer_or_field=AuthRespSerializer)
-    def get_author_list(self):
-        return AuthRespSerializer().data
+    # 方式二
+    # author_list = serializers.ListSerializer(child=AuthRespSerializer())
+
+    # 方式三
+    author_list = serializers.ListField(child=AuthRespSerializer())
+
+    # 方式一需下述操作进行配合
+    # @swagger_serializer_method(serializer_or_field=AuthRespSerializer)
+    # def get_author_list(self):
+    #     return AuthRespSerializer().data
 
 
 # ************************************************************************************************
