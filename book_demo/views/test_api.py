@@ -29,6 +29,17 @@ class TestView(APIView):
         print("request.data: %s"%str(request.data))  # request.data: {}
         print("request.POST: %s"%str(request.POST))  # request.POST: <QueryDict: {}>
 
+        # get请求的话，参数位于query_params
+        req = request.query_params
+        logger.info(req)   # <QueryDict: {'a': ['12', '23']}>
+        logger.info(type(req)) #  <class 'django.http.request.QueryDict'>
+        logger.info(dir(req))
+        req_dict = request.query_params.dict()   # 这样可以拿到标准的python字典，如果是一键多值，默认取后者 {'a': '23'}
+        logger.info(req_dict)
+        logger.info(req.getlist('a'))   # ?a=12&a=23   这样可以拿到对应的一键多值的所有值 ['12', '23']
+        logger.info(req.get('a'))    # 直接get，默认拿后者
+
+
         logger.warning("*********************************")
         return JsonResponse({
             "name": "lulu",
