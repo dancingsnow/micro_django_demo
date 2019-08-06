@@ -20,7 +20,7 @@
 3. 返回值使用rest-frame的Response进行封装，
 ```python
 from rest_framework.response import Response  # 推荐
-from django.http.response import JsonResponse, HttpResponse # 可以序列化成功，但是日志中间件会报错
+from django.http.response import JsonResponse, HttpResponse # 可以序列化成功，不影响正常使用，但是日志中间件会无法成功捕获
 ```
 6. 静态文件handler，全部打开，不受DEBUG=True限制
 
