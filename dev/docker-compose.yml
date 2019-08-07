@@ -15,7 +15,7 @@ services:
 #      - ./../_data_mysql:/var/lib/mysql
 #      - ./../config_files/mysqlld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
-    restart: always
+    # restart: always
     networks:
       - django_demo_net
 
@@ -35,7 +35,7 @@ services:
     image: adminer:latest
     ports:
       - 20014:8080
-    restart: always
+    # restart: always
     networks:
       - django_demo_net
 
